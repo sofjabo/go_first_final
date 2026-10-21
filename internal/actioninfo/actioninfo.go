@@ -16,11 +16,13 @@ func Info(dataset []string, dp DataParser) {
 			log.Printf("ошибка парсинга %q: %v", s, err)
 			continue
 		}
+
 		info, err := dp.ActionInfo()
 		if err != nil {
 			log.Printf("ошибка формирования информации: %v", err)
 			continue
 		}
-		fmt.Println(info)
+		
+		fmt.Print(info)
 	}
 }
